@@ -1,5 +1,11 @@
 # Test Front-end
 
+## Version
+
+npm 4.5.0
+
+vue 2.2.6
+
 ## Configuração
 
 ``` bash
