@@ -1,0 +1,190 @@
+html, body, #app {
+  height: 100%;
+  background: #EDEFF0;
+}
+#app {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  color: rgb(130, 137, 141);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  display: flex;
+  align-items: stretch;
+}
+
+// Button
+.btn {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  border: 0;
+  display: inline-block;
+  background: #F7F9F9;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  color: #B0BEC5;
+  text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px #D9DFE3;
+  transition: background .3s, color .3s;
+  &.active {
+    background: #EEF1F2;
+    color: #78909C;
+  }
+  &:hover {
+    background: #EEF1F2;
+    color: #78909C;
+  }
+  &:focus {
+    outline: none
+  }
+  &.m-l {
+    margin-left: 20px;
+  }
+  &.m-r {
+    margin-right: 20px;
+  }
+  &.btn-right {
+    float: right;
+  }
+
+  // Button larger without color
+  &.btn-lg {
+    padding-top:14px;
+    padding-bottom:14px;
+    box-shadow: 0 1px 0 0 rgba(73,32,45,0.12), inset 0 -1px 0 0 rgba(0,0,0,0.12);
+    border-radius: 2px;
+  }
+
+  // Button for success or add (Add Members, Add Content etc)
+  &.btn-success {
+    color: #fff;
+    background: #87C06D;
+    &:hover {
+      background: darken(#87C06D,12);
+    }
+  }
+
+  // Button for primary or create (Create Members, Create Content etc)
+  &.btn-primary {
+    color: #fff;
+    background: #5F7CBA;
+    &:hover {
+      background: darken(#5F7CBA,12);
+    }
+  }
+
+}
+
+// Buttons Groups
+.btn-groups {
+  display: inline-flex;
+  .btn {
+    border-radius: 0;
+    margin-left: 0;
+    &:first-child {
+      border-radius: 3px 0 0 3px;
+    }
+    &:last-child {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+}
+
+// Widget Chat
+#widget-chat {
+  position: fixed;
+  bottom: 10px;
+  right: 17px;
+  transition: opacity .3s;
+  &:hover {
+    opacity: .7;
+  }
+}
+
+// Background Fade
+.bg-fade {
+  background: rgba(37,53,87,0.38);
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index: 2;
+}
+
+// Circle
+.circle-element {
+  background: #ddd;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+// Animate Router
+// Fade
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s
+}
+.fade-enter, .fade-leave-to {
+  position: absolute;
+  opacity: 0;
+  background: inherit;
+  &::after {
+    content: '';
+    position: absolute;
+    background: inherit;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+  }
+}
+.fade-view-enter-active {
+  transition: opacity .5s
+}
+.fade-view-enter {
+  position: absolute;
+  opacity: 0;
+  background: inherit;
+  &::after {
+    content: '';
+    position: fixed;
+    background: inherit;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+  }
+}
+
+#mini-toastr {
+  top: 150px;
+  .mini-toastr__notification {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    opacity: 1;
+    color: #999A9A;
+    background: #fff;
+    padding: 20px;
+    border-left: 3px solid #555;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.08), 1px 0 8px 0 rgba(0,0,0,0.04);
+    &.-success {
+      border-color: #7DB856;
+      .mini-toastr-notification__title {
+        color: #7DB856;
+      }
+    }
+    .mini-toastr-notification__title {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+    .mini-toastr-notification__message {
+      padding:0;
+    }
+  }
+}
